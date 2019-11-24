@@ -53,24 +53,37 @@ export class VideoPlaylistComponent implements OnInit {
 
   leftArrowClick() {
     const element = this.playlistElement;
+    const scrollValue = element.nativeElement.scrollLeft;
+    if (scrollValue <= 0) {
+      return;
+    }
+    const scrollPerClick = scrollValue - 500;
     const scrollLeftInterval = setInterval(() => {
-      const scrollPos = element.nativeElement.scrollLeft;
-      if (scrollPos <= 0) {
-        element.nativeElement.scrollLeft = scrollPos - 20;
+      let scrollPos = element.nativeElement.scrollLeft;
+      scrollPos = scrollPos - 30;
+      if (scrollPos >= scrollPerClick && scrollPos >= 0) {
+        element.nativeElement.scrollLeft = scrollPos;
       } else {
         clearInterval(scrollLeftInterval);
       }
-    }, 100);
+    }, 50);
     // element.nativeElement.scrollLeft -= 200;
   }
 
   rightArrowClick() {
     const element = this.playlistElement;
+    const scrollValue = element.nativeElement.scrollLeft;
+    const elementWidth = element.nativeElement.offsetWidth;
+    const scrollWidth = element.nativeElement.scrollWidth;
+    if ((scrollValue + elementWidth) >= scrollWidth) {
+      return;
+    }
     const scrollPerClick = element.nativeElement.scrollLeft + 500;
     const scrollLeftInterval = setInterval(() => {
-      const scrollPos = element.nativeElement.scrollLeft;
-      if (scrollPos <= scrollPerClick) {
-        element.nativeElement.scrollLeft = scrollPos + 30;
+      let scrollPos = element.nativeElement.scrollLeft;
+      scrollPos = scrollPos + 30;
+      if (scrollPos <= scrollPerClick && (scrollPos + elementWidth) <= scrollWidth) {
+        element.nativeElement.scrollLeft = scrollPos;
       } else {
         clearInterval(scrollLeftInterval);
       }
