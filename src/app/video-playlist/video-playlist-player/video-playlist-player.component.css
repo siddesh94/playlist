@@ -2,3 +2,24 @@
     width: 710px;
     height: 400px;
 }
+
+@media (min-width: 1920px) {
+    .video-frame {
+        width: 1280x;
+        height: 710px;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1280px) {
+    .video-frame {
+        width: 657px;
+        height: 370px;
+    }
+}
+
+@media (max-width: 640px) {
+    .video-frame {
+        width: 445px;
+        height: 250px;
+    }
+}

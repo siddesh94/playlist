@@ -86,3 +86,10 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
+@media (max-width: 640px) {
+    .poster {
+        width: auto;
+        height: 100px;
+    }
+}

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CustomUppercasePipe } from '../custom-uppercase.pipe';
-
+// import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-video-playlist',
@@ -17,7 +17,9 @@ export class VideoPlaylistComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private sanitizer: DomSanitizer) { }
+    private sanitizer: DomSanitizer,
+    // private toastService: ToastrService.
+    ) { }
 
   ngOnInit() {
     this.fetchPlaylist();
@@ -43,6 +45,8 @@ export class VideoPlaylistComponent implements OnInit {
       } else {
         console.log('Error While Fetching Video Playlist');
       }
+    }, (error) => {
+      // this.toastService.error('Error While Fetching Video Playlist');
     });
   }
   videoChange(url, name) {
