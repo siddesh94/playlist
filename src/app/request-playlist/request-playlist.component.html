@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <div class="form-container">
+        <h1>Playlist Request</h1>
+        <div class="form">
+            <form [formGroup]="playlistForm" (ngSubmit)="onSubmit(playlistForm.value)">
+
+                <div>
+                    Name:
+                    <input type="text" formControlName="name">
+                </div>
+
+                <div>
+                    Poster Link:
+                    <input type="text" formControlName="poster">
+                </div>
+
+                <div>
+                        Trailer Link:
+                        <input type="text" formControlName="trailer">
+                </div>
+
+                <button class="submit" type="submit" [disabled]="!playlistForm.valid">Submit</button>
+
+            </form>
+        </div>
+    </div>
+    <ng-container *ngIf="playlistAdded">
+        <div class="verified">
+            <div class="cross">
+                <img class="verified-image" src="../../assets/verified.svg">
+            </div>
+            <p class="msg">Playlist Added Succesfully</p>
+        </div>
+    </ng-container>
+</div>

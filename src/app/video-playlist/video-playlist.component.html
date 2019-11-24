@@ -5,9 +5,9 @@
              <img class="brand-logo" src="https://www.valuefy.com/assets/images/logo-hd-one.png" alt="Valuefy Solutions" >
         </a>
         </div>
-        <div class="request-playlist">
+        <a routerlink="/request-playlist" class="request-playlist">
             +
-        </div>
+        </a>
     </div>
 
     <div class="videoplayer-wrapper">
@@ -25,9 +25,9 @@
              <div class="video-playlist" *ngFor="let playlist of videoPlaylist; let i = index">
                 <img class="poster" [ngClass]="{'active': posterName === playlist.name}" title="{{playlist.name | customUppercase}}" 
                 src="{{playlist.poster}}" alt="{{playlist.name}}" (click)="videoChange(playlist.trailer, playlist.name)">
-                <!-- <div class="poster movie-name">
-                    {{playlist.name | customUppercase}} | {{playlist.year}}
-                </div> -->
+                <div class="movie-name">
+                    {{playlist.name | customUppercase}}
+                </div>
             </div>
         </div>
         <div *ngIf="isGoodRequest" class="icon-wrapper left-icon" (click)="leftArrowClick()">
