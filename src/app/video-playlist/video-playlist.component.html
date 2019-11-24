@@ -1,7 +1,7 @@
 <div class="wrapper">
     <div class="navigation-bar">
         <div class="brand-wrapper">
-        <a href="#">
+        <a href="/">
              <img class="brand-logo" src="https://www.valuefy.com/assets/images/logo-hd-one.png" alt="Valuefy Solutions" >
         </a>
         </div>
@@ -13,7 +13,9 @@
     <div class="videoplayer-wrapper">
         <div class="videoplayer-container">
             <div class="video-player">
+             <ng-container *ngIf="isGoodRequest">
                <app-video-playlist-player [playVideo]="videoUrl"></app-video-playlist-player>
+            </ng-container>
             </div>
         </div>
     </div>
@@ -28,11 +30,21 @@
                 </div> -->
             </div>
         </div>
-        <div class="icon-wrapper left-icon" (click)="leftArrowClick()">
+        <div *ngIf="isGoodRequest" class="icon-wrapper left-icon" (click)="leftArrowClick()">
             <img class="icon " src="../../assets/icons8-chevron-left-50.png">
         </div>
-        <div class="icon-wrapper right-icon" (click)="rightArrowClick()">
+        <div *ngIf="isGoodRequest" class="icon-wrapper right-icon" (click)="rightArrowClick()">
             <img class="icon" src="../../assets/icons8-chevron-right-50.png">
         </div>
     </div>
+
+
+    <ng-container *ngIf=isBadRequestToast>
+        <div class="bad-request">
+            <div class="cross">
+                <img class="cross-image" src="../../assets/iconfinder_circle-cross_226589.svg">
+            </div>
+            <p class="bad-request-msg">Error While Fetching Playlist, Please Reload</p>
+        </div>
+    </ng-container>
 </div>

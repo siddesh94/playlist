@@ -13,6 +13,8 @@ export class VideoPlaylistComponent implements OnInit {
   videoPlaylist: any;
   videoUrl: any;
   posterName: any;
+  isGoodRequest: boolean;
+  isBadRequestToast: boolean;
   @ViewChild('playlistElement', {static: true})playlistElement: ElementRef;
 
   constructor(
@@ -23,22 +25,15 @@ export class VideoPlaylistComponent implements OnInit {
 
   ngOnInit() {
     this.fetchPlaylist();
-    // fetch(url).then((response) => {
-    //   if (!response.ok) {
-    //     console.log('Error While Fetching Movie Playlist');
-    //   }
-    //   console.log(response.json);
-    // }).then(() => {
-
-    // });
   }
 
    fetchPlaylist() {
     const url = 'https://valuefy-assignment-x.herokuapp.com/api/getVideos';
     this.http.get(url).subscribe((response) => {
       if (response) {
+        this.isGoodRequest = true;
         this.videoPlaylist = response;
-        this.videoPlaylist =  this.videoPlaylist.concat(response);
+        this.videoPlaylist =  this.videoPlaylist.concat(response); // only to test carousel
         this.posterName = this.videoPlaylist[0].name;
         this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoPlaylist[0].trailer);
         console.log(response);
@@ -46,7 +41,11 @@ export class VideoPlaylistComponent implements OnInit {
         console.log('Error While Fetching Video Playlist');
       }
     }, (error) => {
-      // this.toastService.error('Error While Fetching Video Playlist');
+      this.isGoodRequest = false;
+      this.isBadRequestToast = true;
+      setTimeout(() => {
+      this.isBadRequestToast = false;
+      }, 5000);
     });
   }
   videoChange(url, name) {

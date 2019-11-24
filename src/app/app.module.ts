@@ -8,8 +8,6 @@ import { VideoPlaylistPlayerComponent } from './video-playlist/video-playlist-pl
 import { HttpRequestInterceptor } from './http-request-interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CustomUppercasePipe } from './custom-uppercase.pipe';
-// import { ToastrModule } from 'ngx-toastr';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +19,6 @@ import { CustomUppercasePipe } from './custom-uppercase.pipe';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    // ToastrModule.forRoot()
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
