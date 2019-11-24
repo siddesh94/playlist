@@ -1,0 +1,38 @@
+<div class="wrapper">
+    <div class="navigation-bar">
+        <div class="brand-wrapper">
+        <a href="#">
+             <img class="brand-logo" src="https://www.valuefy.com/assets/images/logo-hd-one.png" alt="Valuefy Solutions" >
+        </a>
+        </div>
+        <div class="request-playlist">
+            +
+        </div>
+    </div>
+
+    <div class="videoplayer-wrapper">
+        <div class="videoplayer-container">
+            <div class="video-player">
+               <app-video-playlist-player [playVideo]="videoUrl"></app-video-playlist-player>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-playlist-wrapper">
+        <div id="playlistElement" class="video-playlist-container" #playlistElement>
+             <div class="video-playlist" *ngFor="let playlist of videoPlaylist let i = index">
+                <img class="poster" [ngClass]="{'active': posterName === playlist.name}" title="{{playlist.name | customUppercase}}" 
+                src="{{playlist.poster}}" alt="{{playlist.name}}" (click)="videoChange(playlist.trailer, playlist.name)">
+                <!-- <div class="poster movie-name">
+                    {{playlist.name | customUppercase}} | {{playlist.year}}
+                </div> -->
+            </div>
+            <div class="icon-wrapper left-icon" (click)="leftArrowClick()">
+                <img class="icon " src="../../assets/icons8-chevron-left-50.png">
+            </div>
+            <div class="icon-wrapper right-icon" (click)="rightArrowClick()">
+                <img class="icon" src="../../assets/icons8-chevron-right-50.png">
+            </div>
+        </div>
+    </div>
+</div>

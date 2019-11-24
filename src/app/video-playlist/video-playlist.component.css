@@ -1,0 +1,87 @@
+.brand-wrapper {
+    margin-right: 5px;
+    padding: 10px;
+}
+.navigation-bar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.request-playlist {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    padding: 10px;
+    font-weight: bolder;
+    border: 2px solid aqua;
+    border-radius: 3px; 
+    cursor: pointer;
+}
+
+.video-playlist-wrapper {
+    padding: 10px;
+}
+.video-playlist-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.poster {
+    width:auto;
+    height: 195px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.poster:hover {
+    transform: scale(1.05);
+}
+.active {
+    border: 1px solid aquamarine;
+}
+.movie-name {
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+.video-playlist {
+    margin: 0 5px;
+    padding: 5px 0;
+}
+
+.videoplayer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 80%;
+    padding: 2px;
+}
+.left-icon {
+   left: 10px;
+   top: 50%;
+   transform: translateY(-50%);
+
+}
+
+.right-icon {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.icon-wrapper {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: ghostwhite;
+    border-radius: 50%;
+    cursor: pointer;
+}
