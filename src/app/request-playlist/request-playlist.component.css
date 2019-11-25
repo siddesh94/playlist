@@ -1,0 +1,94 @@
+.form-container {
+    padding: 20px;
+    background-color: #f2f2f2;
+    width: 50%;
+    margin: 20px auto;
+    border-radius: 6px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submit {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    background-color: #00aafb;
+    cursor: pointer;
+    outline: none;
+}
+
+.submit:hover {
+    background-color: #0099e2;
+}
+
+.verified {
+    width: 230px;
+    background-color: rgb(255, 255, 255);
+    height: 55px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 8px solid rgb(99, 247, 0);
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.msg {
+    font-family: 'Nunito', sans-serif;;
+    color: #383838;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.cross {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.verified-image {
+    width: 100%;
+}
+
+.bad-request {
+    width: 230px;
+    background-color: rgb(255, 255, 255);
+    height: 55px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 8px solid darkred;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.cross {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.cross-image {
+    width: 100%;
+}
+
+button[type=submit]:disabled {
+    opacity: 0.25;
+    cursor: default;
+  }

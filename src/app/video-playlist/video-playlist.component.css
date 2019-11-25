@@ -1,0 +1,132 @@
+.video-playlist-wrapper {
+    padding: 10px;
+    position: relative;
+}
+.video-playlist-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.poster {
+    width:auto;
+    height: 195px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.poster:hover {
+    transform: scale(1.05);
+}
+.active {
+    border: 1px solid aquamarine;
+}
+.movie-name {
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 8rem;
+    font-size: 13px;
+    text-align: center;
+    margin: 7px 0;
+    cursor: default;
+    user-select: none;
+}
+.video-playlist {
+    margin: 0 5px;
+    padding: 5px 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.videoplayer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-left {
+    padding: 3px 4px 3px 6px;
+}
+.fa-chevron-left:before {
+    font-size: 14px;
+}
+
+.fa-right {
+    padding: 3px 4px 3px 8px;
+}
+
+.fa-chevron-right:before {
+    font-size: 14px;
+}
+.left-icon {
+   left: 12%;
+   top: 50%;
+   transform: translateY(-50%);
+
+}
+
+.right-icon {
+    right: 12%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.icon-wrapper {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #494949;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.icon-wrapper:hover {
+    background-color: white;
+    color: #494949;
+}
+
+.bad-request {
+    width: 230px;
+    background-color: rgb(255, 255, 255);
+    height: 55px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 8px solid darkred;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.bad-request-msg {
+    font-family: 'Nunito', sans-serif;
+    color: #383838;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+.cross {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    border-radius: 50%;
+}
+
+.cross-image {
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .poster {
+        width: auto;
+        height: 100px;
+    }
+}

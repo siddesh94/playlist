@@ -1,0 +1,24 @@
+.brand-wrapper {
+    margin-right: 5px;
+    padding: 10px;
+}
+
+.navigation-bar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.request-playlist {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #4aa7f7;
+    font-size: 17px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #5cb847;
+}
