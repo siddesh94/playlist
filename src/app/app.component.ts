@@ -9,5 +9,5 @@ import { Router} from '@angular/router';
 export class AppComponent {
   title = 'movie-player';
 
-  constructor(private route: Router) { }
+  constructor(public route: Router) { }
 }
