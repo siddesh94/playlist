@@ -10,7 +10,6 @@ export class HttpRequestInterceptor implements HttpInterceptor {
       const playlistReq = req.clone({
           headers: req.headers.set('Source', 'Web')
       });
-      console.log(playlistReq);
       return next.handle(playlistReq);
   }
 }

@@ -1,4 +1,14 @@
 
-
-<app-video-playlist></app-video-playlist>
+<div class="navigation-bar">
+    <div class="brand-wrapper">
+    <a href="/">
+         <img class="brand-logo" src="https://www.valuefy.com/assets/images/logo-hd-one.png" alt="Valuefy Solutions" >
+    </a>
+    </div>
+    <ng-container *ngIf="route.url !== '/request-playlist'">
+    <a routerLink="/request-playlist" class="request-playlist">
+       Request Playlist
+    </a>
+  </ng-container>
+</div>
 <router-outlet></router-outlet>

@@ -1,14 +1,4 @@
 <div class="wrapper">
-    <div class="navigation-bar">
-        <div class="brand-wrapper">
-        <a href="/">
-             <img class="brand-logo" src="https://www.valuefy.com/assets/images/logo-hd-one.png" alt="Valuefy Solutions" >
-        </a>
-        </div>
-        <a routerlink="/request-playlist" class="request-playlist">
-            +
-        </a>
-    </div>
 
     <div class="videoplayer-wrapper">
         <div class="videoplayer-container">
@@ -31,10 +21,10 @@
             </div>
         </div>
         <div *ngIf="isGoodRequest" class="icon-wrapper left-icon" (click)="leftArrowClick()">
-            <img class="icon " src="../../assets/icons8-chevron-left-50.png">
+            <i class="fa fa-chevron-left fa-left" aria-hidden="true"></i>
         </div>
         <div *ngIf="isGoodRequest" class="icon-wrapper right-icon" (click)="rightArrowClick()">
-            <img class="icon" src="../../assets/icons8-chevron-right-50.png">
+                <i class="fa fa-chevron-right fa-right" aria-hidden="true"></i>
         </div>
     </div>
 
