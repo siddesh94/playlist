@@ -14,6 +14,7 @@ export class VideoPlaylistComponent implements OnInit {
   posterName: any;
   isGoodRequest: boolean;
   isBadRequestToast: boolean;
+  isRequestLoaded: boolean;
   @ViewChild('playlistElement', { static: true }) playlistElement: ElementRef;
 
   constructor(
@@ -30,12 +31,14 @@ export class VideoPlaylistComponent implements OnInit {
     this.http.get(url).subscribe((response) => {
       if (response) {
         this.isGoodRequest = true;
+        this.isRequestLoaded = true;
         this.videoPlaylist = response;
         this.videoPlaylist = this.videoPlaylist.concat(response); // only to test carousel
         this.posterName = this.videoPlaylist[0].name;
         this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoPlaylist[0].trailer);
       } else {
         this.isGoodRequest = false;
+        this.isRequestLoaded = false;
         this.isBadRequestToast = true;
         setTimeout(() => {
           this.isBadRequestToast = false;
@@ -44,6 +47,7 @@ export class VideoPlaylistComponent implements OnInit {
     }, (error) => {
       this.isGoodRequest = false;
       this.isBadRequestToast = true;
+      this.isRequestLoaded = false;
       setTimeout(() => {
         this.isBadRequestToast = false;
       }, 5000);
